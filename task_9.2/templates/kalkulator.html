@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator</title>
+</head>
+<body>
+<form method="post" enctype=multipart/form-data>
+<label for="currency">Wybierz walutę: </label>
+    <select name="currency" id="currency">
+        {% for element in currency_cal %}
+        <option value='{{element}}'>{{element}}</option>
+        {% endfor %}
+    </select>
+    <br><br><label for="amount">Wpisz ilość sztuk: </label>
+    <input type="text" placeholder="0" name="amount" required>
+    <input type="submit" value="Przelicz">
+</form>
+<br><b>{{ code }}</b><br>
+Sprzedaż: {{ bid }}<br>
+Kupno: {{ ask }}<br>
+<br>Zapłacisz <b>{{ cost }} PLN</b> za {{ amount }} sztuk {{ currency_from_form }}.
+</body>
+</html>
